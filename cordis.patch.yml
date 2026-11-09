@@ -1,0 +1,7 @@
+# @harzva/dsh-role-registry —— 中立角色库插件。
+# 提供 ctx.provide('roleRegistry') + 兼容别名 ctx.provide('groupxRoleRegistry')（同一实例）。
+# 不预置任何角色；GroupX / supervisor / 未来 provider 各自注册自己的角色内容。
+- insert:
+    - id: harzva-dsh-role-registry
+      name: '@harzva/dsh-role-registry'
+      config: {}

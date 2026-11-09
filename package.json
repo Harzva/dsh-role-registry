@@ -1,0 +1,63 @@
+{
+  "name": "@harzva/dsh-role-registry",
+  "version": "0.1.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "description": "Neutral role/role-registry plugin: pure mechanism (types + register/resolve/snapshot), no preset roles. Any provider (groupx, supervisor, future) registers and summons roles here.",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./roles": {
+      "types": "./lib/types/types.d.ts",
+      "default": "./lib/types.js"
+    },
+    "./picker": {
+      "types": "./lib/types/picker.d.ts",
+      "default": "./lib/picker.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "cordis.patch.yml",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs && tsc --emitDeclarationOnly",
+    "check": "node --check lib/index.js && node --check lib/registry.js && node --check lib/normalize.js && node --check lib/types.js && node --check lib/picker.js && node --check lib/client.js && node --test",
+    "test": "node --test"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harzva/dsh-role-registry.git"
+  },
+  "homepage": "https://github.com/Harzva/dsh-role-registry#readme",
+  "bugs": {
+    "url": "https://github.com/Harzva/dsh-role-registry/issues"
+  }
+}
