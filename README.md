@@ -100,7 +100,7 @@ node --test              # 单测
 Install this registry before its consumer in the same web profile:
 
 ```sh
-dsh plugin --profile web add https://github.com/Harzva/dsh-role-registry/archive/refs/heads/main.tar.gz
+dsh plugin --profile web add https://github.com/Harzva/dsh-role-registry/archive/refs/tags/v0.1.0-alpha.1.tar.gz
 ```
 
 This GitHub source archive contains the built client and Host modules; no npm
